@@ -1,7 +1,7 @@
 {
   "name": "hypergsc",
-  "version": "0.1.1",
-  "description": "Analyze Search Console data, find CTR opportunities, and check indexing with HyperGSC.",
+  "version": "0.2.0",
+  "description": "Analyze Search Console performance, plan content, research competitors and backlinks, and evaluate recorded SEO changes with HyperGSC.",
   "author": {
     "name": "HyperGSC",
     "url": "https://hypergsc.com",
@@ -19,13 +19,17 @@
   "interface": {
     "displayName": "HyperGSC",
     "shortDescription": "Search insights for your AI",
-    "longDescription": "Review Google Search Console performance for your selected properties, find CTR opportunities, and check stored Google indexing observations. Sign in with browser OAuth and use your existing HyperGSC account entitlements. Reports disclose data freshness, date ranges, and coverage limitations. These workflows do not modify your website or sell subscriptions.",
+    "longDescription": "Review Google Search Console performance, find CTR and content opportunities, inspect stored indexing observations, research competitors and backlink gaps, and evaluate recorded SEO changes. Sign in with browser OAuth using your existing HyperGSC entitlements. Reports disclose dates, freshness and coverage. Saving project context, keywords or change records requires optional projects:write consent and an explicit request. Workflows do not modify your website or Google data.",
     "developerName": "HyperGSC",
     "category": "Productivity",
     "capabilities": [
       "Search performance",
       "CTR opportunities",
-      "Indexing checks"
+      "Indexing checks",
+      "Content planning",
+      "Competitor research",
+      "Change evaluation",
+      "Backlink gaps"
     ],
     "websiteURL": "https://hypergsc.com",
     "privacyPolicyURL": "https://hypergsc.com/privacy",
@@ -57,10 +61,10 @@
               "expected_behavior": "Report clicks, impressions, CTR, average position, dates and freshness; ask which property if ambiguous."
             },
             {
-              "description": "Compare periods",
-              "prompt": "Compare my site's last complete week with the preceding week.",
-              "tools_triggered": "get_capabilities, compare_search_periods",
-              "expected_behavior": "Compare equal-length periods and disclose missing or truncated data."
+              "description": "Content planning",
+              "prompt": "Find content opportunities for my selected site using the last 28 complete days.",
+              "tools_triggered": "get_capabilities, get_content_opportunities",
+              "expected_behavior": "Rank observed opportunities with exact dates, freshness and coverage; separate observed data from recommendations."
             },
             {
               "description": "Check indexing",
@@ -69,10 +73,10 @@
               "expected_behavior": "Request the URL if missing; distinguish stored inspection from a live crawl."
             },
             {
-              "description": "Check usage",
-              "prompt": "How much HyperGSC usage do I have left?",
-              "tools_triggered": "get_usage",
-              "expected_behavior": "Report remaining allowances without initiating a purchase."
+              "description": "Save research",
+              "prompt": "Save these three selected keywords to my selected property in HyperGSC.",
+              "tools_triggered": "get_capabilities, save_keywords, list_saved_keywords",
+              "expected_behavior": "Require projects:write consent and explicit keywords and property; save only the requested records and confirm them without modifying the website."
             }
           ],
           "negative": [
@@ -94,10 +98,11 @@
           ]
         },
         "commerce": false,
-        "commerce_description": "Uses existing account entitlements for SEO analysis. This endpoint does not list subscription plans, initiate checkout, apply upgrades, or process payments."
+        "commerce_description": "Uses existing account entitlements for SEO analysis. This endpoint does not list subscription plans, initiate checkout, apply upgrades, or process payments.",
+        "release_notes": "0.2.0: SEO research memory, keyword/page overlap, content planning, competitor domain and page research, recorded change evaluation, and bounded backlink gap. Optional projects:write consent for encrypted research writes."
       },
       "publication": {
-        "release_notes": "0.1.1: complete listing metadata and reviewer cases; use a dedicated OAuth-only OpenAI endpoint without subscription sales tools. Includes search-review, ctr-opportunities, and indexing-check workflows."
+        "release_notes": "0.2.0: seven SEO workflows covering search review, CTR opportunities, indexing, content planning, competitor research, change evaluation and backlink gap. Optional projects:write consent for encrypted research writes; the dedicated OpenAI endpoint remains OAuth-only without subscription sales tools."
       }
     }
   }

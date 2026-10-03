@@ -1,13 +1,14 @@
 # HyperGSC for ChatGPT and Codex
 
 Connect Google Search Console to ChatGPT and Codex with HyperGSC's hosted MCP integration.
-Review search traffic, find CTR opportunities, and check stored Google indexing observations.
+Review search performance and indexing, plan content, research competitors and backlinks,
+and evaluate recorded SEO changes.
 
 ![HyperGSC](plugins/hypergsc/assets/logo.png)
 
 ## Release status
 
-This is a preview package for ChatGPT submission and Codex evaluation. The dedicated `/mcp/openai` backend changes still need production deployment and live OAuth verification. Do not rely on this preview for production use. ChatGPT directory submission and approval are pending.
+This is a preview package for ChatGPT submission and Codex evaluation. Live OAuth verification is pending. Do not rely on this preview for production use. ChatGPT directory submission and approval are pending.
 
 ## Set up
 
@@ -28,6 +29,10 @@ Publishing this GitHub repository does not establish platform approval.
 - **search-review:** compare complete periods and investigate observed traffic changes.
 - **ctr-opportunities:** identify pages and queries worth investigating for snippet improvements.
 - **indexing-check:** inspect selected URLs and distinguish stored observations from live tests.
+- **content-planning:** review query/page opportunities and overlap, draft briefs, and save requested research.
+- **competitor-research:** review domain estimates, top pages, and keyword gaps.
+- **change-evaluation:** record applied changes and compare complete before/after GSC windows.
+- **backlink-gap:** compare bounded referring-domain samples with explicit competitors.
 
 Example: “Use HyperGSC to review my latest complete week of search performance.”
 If several properties are enabled, the agent asks which one to use.
@@ -39,6 +44,8 @@ Missing data is unknown; results disclose dates, freshness, filters, and coverag
 
 Use browser OAuth. Never paste passwords, API keys, or tokens into chat.
 Revoke client access from your HyperGSC dashboard when needed.
+Saving or deleting project context, keywords, and SEO change records requires Starter+ and optional
+`projects:write` consent alongside `gsc:read`. Existing API keys remain read-only.
 
 - Website: https://hypergsc.com
 - Connection documentation: https://hypergsc.com/agent-setup/prompt.md
@@ -46,7 +53,7 @@ Revoke client access from your HyperGSC dashboard when needed.
 - Privacy: https://hypergsc.com/privacy
 - Terms: https://hypergsc.com/tos
 
-Version: 0.1.1. Only public integration files are included here.
+Version: 0.2.0. Only public integration files are included here.
 
 ## Validate and package
 
@@ -54,10 +61,10 @@ Python 3.9+ is sufficient; there are no third-party dependencies. From the repos
 
 ```sh
 python3 scripts/validate.py
-python3 scripts/validate.py --zip dist/hypergsc-openai-0.1.1.zip
+python3 scripts/validate.py --zip dist/hypergsc-openai-0.2.0.zip
 ```
 
-The ZIP contains the platform manifest, MCP configuration, logo, and three skills at
+The ZIP contains the platform manifest, MCP configuration, logo, and seven skills at
 the plugin root. Local checks run in GitHub Actions and do not connect to your account.
 See [review preparation and live cases](review/README.md) before submitting to a directory.
 
