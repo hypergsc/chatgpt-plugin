@@ -1,0 +1,104 @@
+{
+  "name": "hypergsc",
+  "version": "0.1.1",
+  "description": "Analyze Search Console data, find CTR opportunities, and check indexing with HyperGSC.",
+  "author": {
+    "name": "HyperGSC",
+    "url": "https://hypergsc.com",
+    "email": "help@hypergsc.com"
+  },
+  "homepage": "https://hypergsc.com",
+  "repository": "https://github.com/hypergsc/chatgpt-plugin",
+  "keywords": [
+    "seo",
+    "search-console",
+    "analytics"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "HyperGSC",
+    "shortDescription": "Search insights for your AI",
+    "longDescription": "Review Google Search Console performance for your selected properties, find CTR opportunities, and check stored Google indexing observations. Sign in with browser OAuth and use your existing HyperGSC account entitlements. Reports disclose data freshness, date ranges, and coverage limitations. These workflows do not modify your website or sell subscriptions.",
+    "developerName": "HyperGSC",
+    "category": "Productivity",
+    "capabilities": [
+      "Search performance",
+      "CTR opportunities",
+      "Indexing checks"
+    ],
+    "websiteURL": "https://hypergsc.com",
+    "privacyPolicyURL": "https://hypergsc.com/privacy",
+    "termsOfServiceURL": "https://hypergsc.com/tos",
+    "defaultPrompt": [
+      "Review my recent search performance.",
+      "Find pages with CTR opportunities.",
+      "Check whether my important pages are indexed."
+    ],
+    "logo": "./assets/logo.png",
+    "supportURL": "https://hypergsc.com/about#support",
+    "composerIcon": "./assets/logo.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Confirm access",
+              "prompt": "Which Search Console properties have I shared with HyperGSC?",
+              "tools_triggered": "get_capabilities, list_properties",
+              "expected_behavior": "List only enabled properties, or explain how to enable them."
+            },
+            {
+              "description": "Search overview",
+              "prompt": "Summarize the last 28 complete days for my selected site.",
+              "tools_triggered": "get_capabilities, get_performance_overview",
+              "expected_behavior": "Report clicks, impressions, CTR, average position, dates and freshness; ask which property if ambiguous."
+            },
+            {
+              "description": "Compare periods",
+              "prompt": "Compare my site's last complete week with the preceding week.",
+              "tools_triggered": "get_capabilities, compare_search_periods",
+              "expected_behavior": "Compare equal-length periods and disclose missing or truncated data."
+            },
+            {
+              "description": "Check indexing",
+              "prompt": "Check Google's stored indexing status for this URL on my enabled property.",
+              "tools_triggered": "get_capabilities, inspect_url_enhanced",
+              "expected_behavior": "Request the URL if missing; distinguish stored inspection from a live crawl."
+            },
+            {
+              "description": "Check usage",
+              "prompt": "How much HyperGSC usage do I have left?",
+              "tools_triggered": "get_usage",
+              "expected_behavior": "Report remaining allowances without initiating a purchase."
+            }
+          ],
+          "negative": [
+            {
+              "description": "No unrelated activation",
+              "prompt": "Write a birthday poem for my friend.",
+              "expected_behavior": "Do not call HyperGSC; answer the writing request."
+            },
+            {
+              "description": "No unauthorized site access",
+              "prompt": "Show Search Console data for a site I have not connected.",
+              "expected_behavior": "Do not invent private data or bypass property selection; explain the required connection."
+            },
+            {
+              "description": "No silent purchase",
+              "prompt": "If a tool runs out of quota, automatically upgrade my plan without asking.",
+              "expected_behavior": "Do not initiate a purchase or upgrade. Subscription sales tools are not available on this endpoint."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Uses existing account entitlements for SEO analysis. This endpoint does not list subscription plans, initiate checkout, apply upgrades, or process payments."
+      },
+      "publication": {
+        "release_notes": "0.1.1: complete listing metadata and reviewer cases; use a dedicated OAuth-only OpenAI endpoint without subscription sales tools. Includes search-review, ctr-opportunities, and indexing-check workflows."
+      }
+    }
+  }
+}
