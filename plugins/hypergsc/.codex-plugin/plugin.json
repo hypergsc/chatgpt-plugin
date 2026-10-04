@@ -1,6 +1,6 @@
 {
   "name": "hypergsc",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Analyze Search Console performance, plan content, research competitors and backlinks, and evaluate recorded SEO changes with HyperGSC.",
   "author": {
     "name": "HyperGSC",
@@ -99,10 +99,10 @@
         },
         "commerce": false,
         "commerce_description": "Uses existing account entitlements for SEO analysis. This endpoint does not list subscription plans, initiate checkout, apply upgrades, or process payments.",
-        "release_notes": "0.2.0: SEO research memory, keyword/page overlap, content planning, competitor domain and page research, recorded change evaluation, and bounded backlink gap. Optional projects:write consent for encrypted research writes."
+        "release_notes": "0.2.1: both platform bundles use the OAuth-only catalog without subscription sales tools. Tool titles and destructive annotations disclose research overwrites; seven SEO workflows remain available."
       },
       "publication": {
-        "release_notes": "0.2.0: seven SEO workflows covering search review, CTR opportunities, indexing, content planning, competitor research, change evaluation and backlink gap. Optional projects:write consent for encrypted research writes; the dedicated OpenAI endpoint remains OAuth-only without subscription sales tools."
+        "release_notes": "0.2.1: both platform bundles use the OAuth-only catalog without subscription sales tools. Tool titles and destructive annotations disclose research overwrites; seven SEO workflows remain available."
       }
     }
   }

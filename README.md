@@ -8,7 +8,7 @@ and evaluate recorded SEO changes.
 
 ## Release status
 
-This is a preview package for ChatGPT submission and Codex evaluation. Live OAuth verification is pending. Do not rely on this preview for production use. ChatGPT directory submission and approval are pending.
+This is a preview package for ChatGPT submission and Codex evaluation. Production ChatGPT OAuth and dedicated reviewer cases have passed. Native installed-skill runtime validation remains pending. ChatGPT directory submission and approval are pending.
 
 ## Set up
 
@@ -53,7 +53,7 @@ Saving or deleting project context, keywords, and SEO change records requires St
 - Privacy: https://hypergsc.com/privacy
 - Terms: https://hypergsc.com/tos
 
-Version: 0.2.0. Only public integration files are included here.
+Version: 0.2.1. Only public integration files are included here.
 
 ## Validate and package
 
@@ -61,7 +61,7 @@ Python 3.9+ is sufficient; there are no third-party dependencies. From the repos
 
 ```sh
 python3 scripts/validate.py
-python3 scripts/validate.py --zip dist/hypergsc-openai-0.2.0.zip
+python3 scripts/validate.py --zip dist/hypergsc-openai-0.2.1.zip
 ```
 
 The ZIP contains the platform manifest, MCP configuration, logo, and seven skills at
