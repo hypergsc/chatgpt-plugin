@@ -1,6 +1,6 @@
 {
   "name": "hypergsc",
-  "version": "0.2.1",
+  "version": "0.2.4",
   "description": "Analyze Search Console performance, plan content, research competitors and backlinks, and evaluate recorded SEO changes with HyperGSC.",
   "author": {
     "name": "HyperGSC",
@@ -19,7 +19,7 @@
   "interface": {
     "displayName": "HyperGSC",
     "shortDescription": "Search insights for your AI",
-    "longDescription": "Review Google Search Console performance, find CTR and content opportunities, inspect stored indexing observations, research competitors and backlink gaps, and evaluate recorded SEO changes. Sign in with browser OAuth using your existing HyperGSC entitlements. Reports disclose dates, freshness and coverage. Saving project context, keywords or change records requires optional projects:write consent and an explicit request. Workflows do not modify your website or Google data.",
+    "longDescription": "Review Google Search Console performance, find CTR and content opportunities, inspect stored indexing observations, research competitors and backlink gaps, and evaluate recorded SEO changes. Sign in with browser OAuth using your existing HyperGSC entitlements. Reports disclose dates, freshness and coverage. Saving keywords or change records requires optional projects:write consent and an explicit request. Workflows do not modify your website or Google data.",
     "developerName": "HyperGSC",
     "category": "Productivity",
     "capabilities": [
@@ -29,7 +29,8 @@
       "Content planning",
       "Competitor research",
       "Change evaluation",
-      "Backlink gaps"
+      "Backlink gaps",
+      "Domain comparisons"
     ],
     "websiteURL": "https://hypergsc.com",
     "privacyPolicyURL": "https://hypergsc.com/privacy",
@@ -99,10 +100,10 @@
         },
         "commerce": false,
         "commerce_description": "Uses existing account entitlements for SEO analysis. This endpoint does not list subscription plans, initiate checkout, apply upgrades, or process payments.",
-        "release_notes": "0.2.1: both platform bundles use the OAuth-only catalog without subscription sales tools. Tool titles and destructive annotations disclose research overwrites; seven SEO workflows remain available."
+        "release_notes": "0.2.4: uses the shared /mcp endpoint with no billing or generic project-context tools. Keeps saved keywords, SEO change history and diagnostic reports. Adds API documentation to tool descriptions and preserves existing SEO connections. Requires deployment and live-client validation."
       },
       "publication": {
-        "release_notes": "0.2.1: both platform bundles use the OAuth-only catalog without subscription sales tools. Tool titles and destructive annotations disclose research overwrites; seven SEO workflows remain available."
+        "release_notes": "0.2.4: uses the shared /mcp endpoint with no billing or generic project-context tools. Keeps saved keywords, SEO change history and diagnostic reports. Adds API documentation to tool descriptions and preserves existing SEO connections. Requires deployment and live-client validation."
       }
     }
   }
